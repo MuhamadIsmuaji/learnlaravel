@@ -37,3 +37,4 @@ Route::get('elrel/user/{user_id}/posts', 'ElrelController@userposts')->name('elr
 Route::get('elrel/user/{user_id}/roles', 'ElrelController@userroles')->name('elrel.userroles');
 Route::get('elrel/post/{post_id}/detail', 'ElrelController@postdetail')->name('elrel.postdetail');
 Route::get('elrel/role/{role_id}/detail', 'ElrelController@roledetail')->name('elrel.roledetail');
+Route::get('elrel/country/{country_id}/posts', 'ElrelController@countryposts')->name('elrel.countryposts');

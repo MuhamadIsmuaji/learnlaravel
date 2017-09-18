@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Country;
 use App\Post;
 use App\Role;
 use App\User;
@@ -13,8 +14,9 @@ class ElrelController extends Controller
         $users = User::all();
         $posts = Post::all();
         $roles = Role::all();
+        $countries = Country::all();
 
-        return view('elrel.index', compact('users', 'posts', 'roles'));
+        return view('elrel.index', compact('users', 'posts', 'roles', 'countries'));
     }
 
     public function userposts($user_id)
@@ -40,5 +42,11 @@ class ElrelController extends Controller
     {
         $role = Role::find($role_id);
         return view('elrel.role_detail', compact('role'));
+    }
+
+    public function countryposts($country_id)
+    {
+        $country = Country::find($country_id);
+        return view('elrel.country_posts', compact('country'));
     }
 }

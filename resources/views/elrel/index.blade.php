@@ -37,3 +37,16 @@
 		@endforeach
 	</ul>
 </div>
+
+<div class="country-lists">
+	<h3>Country Lists</h3>
+	<hr>
+	<ul>
+		@foreach($countries as $country)
+			<li>
+				{{ $country->name }}
+				<a href="{{ route('elrel.countryposts', ['country_id' => $country->id]) }}">Posts</a>
+			</li>
+		@endforeach
+	</ul>
+</div>
