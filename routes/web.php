@@ -40,3 +40,5 @@ Route::get('elrel/post/{post_id}/detail', 'ElrelController@postdetail')->name('e
 Route::get('elrel/role/{role_id}/detail', 'ElrelController@roledetail')->name('elrel.roledetail');
 Route::get('elrel/country/{country_id}/posts', 'ElrelController@countryposts')->name('elrel.countryposts');
 Route::get('elrel/photo/{photo_id}/detail', 'ElrelController@photodetail')->name('elrel.photodetail');
+Route::get('elrel/video/{video_id}/detail', 'ElrelController@videodetail')->name('elrel.videodetail');
+Route::get('elrel/tag/{tag_id}/detail', 'ElrelController@tagdetail')->name('elrel.tagdetail');

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Photo extends Model
 {
-    // Polimorphic relationship
+    // Polymorphic relationship
     public function imageable()
     {
         return $this->morphTo();

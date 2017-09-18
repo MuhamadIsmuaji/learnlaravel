@@ -48,7 +48,7 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class);
     }
 
-    // Polimorphic relationship
+    // Polymorphic relationship
     public function photos()
     {
         return $this->morphMany(Photo::class, 'imageable');

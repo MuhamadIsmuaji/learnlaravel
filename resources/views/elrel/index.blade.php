@@ -64,3 +64,29 @@
 		@endforeach
 	</ul>
 </div>
+
+<div class="video-lists">
+	<h3>Video Lists</h3>
+	<hr>
+	<ul>
+		@foreach($videos as $video)
+			<li>
+				{{ $video->name }}
+				<a href="{{ route('elrel.videodetail', ['video_id' => $video->id]) }}">Detail</a>
+			</li>
+		@endforeach
+	</ul>
+</div>
+
+<div class="tag-lists">
+	<h3>Tag Lists</h3>
+	<hr>
+	<ul>
+		@foreach($tags as $tag)
+			<li>
+				{{ $tag->name }}
+				<a href="{{ route('elrel.tagdetail', ['tag_id' => $tag->id]) }}">Detail</a>
+			</li>
+		@endforeach
+	</ul>
+</div>

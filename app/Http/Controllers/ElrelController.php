@@ -6,7 +6,9 @@ use App\Country;
 use App\Photo;
 use App\Post;
 use App\Role;
+use App\Tag;
 use App\User;
+use App\Video;
 
 class ElrelController extends Controller
 {
@@ -17,8 +19,10 @@ class ElrelController extends Controller
         $roles = Role::all();
         $countries = Country::all();
         $photos = Photo::all();
+        $videos = Video::all();
+        $tags = Tag::all();
 
-        return view('elrel.index', compact('users', 'posts', 'roles', 'countries', 'photos'));
+        return view('elrel.index', compact('users', 'posts', 'roles', 'countries', 'photos', 'videos', 'tags'));
     }
 
     public function userposts($user_id)
@@ -64,5 +68,19 @@ class ElrelController extends Controller
         $photo = Photo::find($photo_id);
 
         dd($photo->imageable->name);
+    }
+
+    public function videodetail($video_id)
+    {
+        $video = Video::find($video_id);
+
+        return view('elrel.video_detail', compact('video'));
+    }
+
+    public function tagdetail($tag_id)
+    {
+        $tag = Tag::find($tag_id);
+
+        dd($tag->posts);
     }
 }

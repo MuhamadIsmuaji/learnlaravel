@@ -30,9 +30,15 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-    // Polimorphic relationship
+    // Polymorphic relationship
     public function photos()
     {
         return $this->morphMany(Photo::class, 'imageable');
+    }
+
+    // Polymorphic many to many relationship
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class, 'taggable');
     }
 }
