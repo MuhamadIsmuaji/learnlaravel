@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -21,4 +22,10 @@ class Post extends Model
     protected $fillable = ['title', 'content'];
 
     protected $dates = ['deleted_at'];
+
+    // One to many relationship (inverse)
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

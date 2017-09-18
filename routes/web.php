@@ -22,7 +22,7 @@ Route::get('qucreate', 'QuController@create')->name('qu.create');
 Route::get('quupdate/{id}', 'QuController@update')->name('qu.update');
 Route::get('qudelete/{id}', 'QuController@delete')->name('qu.delete');
 
-// Eloquent routes
+// Eloquent basic routes
 Route::get('el', 'ElController@index')->name('el.index');
 Route::get('elcreatebasic', 'ElController@createbasic')->name('el.createbasic');
 Route::get('elcreatemass', 'ElController@createmass')->name('el.createmass');
@@ -30,3 +30,8 @@ Route::get('eldelete/{id}', 'ElController@delete')->name('el.delete');
 Route::get('forcedelete/{id}', 'ElController@forcedelete')->name('el.forcedelete');
 Route::get('elupdatebasic/{id}', 'ElController@updatebasic')->name('el.updatebasic');
 Route::get('elupdatemass/{id}', 'ElController@updatemass')->name('el.updatemass');
+
+// Eloquent relationship routes
+Route::get('elrel', 'ElrelController@index')->name('elrel.index');
+Route::get('elrel/user/{user_id}/posts', 'ElrelController@userposts')->name('elrel.userposts');
+Route::get('elrel/post/{post_id}/detail', 'ElrelController@postdetail')->name('elrel.postdetail');
