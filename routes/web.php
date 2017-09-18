@@ -39,3 +39,4 @@ Route::get('elrel/user/{user_id}/photos', 'ElrelController@userphotos')->name('e
 Route::get('elrel/post/{post_id}/detail', 'ElrelController@postdetail')->name('elrel.postdetail');
 Route::get('elrel/role/{role_id}/detail', 'ElrelController@roledetail')->name('elrel.roledetail');
 Route::get('elrel/country/{country_id}/posts', 'ElrelController@countryposts')->name('elrel.countryposts');
+Route::get('elrel/photo/{photo_id}/detail', 'ElrelController@photodetail')->name('elrel.photodetail');

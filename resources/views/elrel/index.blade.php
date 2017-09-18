@@ -51,3 +51,16 @@
 		@endforeach
 	</ul>
 </div>
+
+<div class="country-lists">
+	<h3>Photo Lists</h3>
+	<hr>
+	<ul>
+		@foreach($photos as $photo)
+			<li>
+				{{ $photo->path }}
+				<a href="{{ route('elrel.photodetail', ['photo_id' => $photo->id]) }}">Detail</a>
+			</li>
+		@endforeach
+	</ul>
+</div>

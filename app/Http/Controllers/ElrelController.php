@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Country;
+use App\Photo;
 use App\Post;
 use App\Role;
 use App\User;
@@ -15,8 +16,9 @@ class ElrelController extends Controller
         $posts = Post::all();
         $roles = Role::all();
         $countries = Country::all();
+        $photos = Photo::all();
 
-        return view('elrel.index', compact('users', 'posts', 'roles', 'countries'));
+        return view('elrel.index', compact('users', 'posts', 'roles', 'countries', 'photos'));
     }
 
     public function userposts($user_id)
@@ -55,5 +57,12 @@ class ElrelController extends Controller
     {
         $country = Country::find($country_id);
         return view('elrel.country_posts', compact('country'));
+    }
+
+    public function photodetail($photo_id)
+    {
+        $photo = Photo::find($photo_id);
+
+        dd($photo->imageable->name);
     }
 }
