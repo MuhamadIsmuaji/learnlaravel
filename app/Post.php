@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Photo;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -27,5 +28,11 @@ class Post extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    // Polimorphic relationship
+    public function photos()
+    {
+        return $this->morphMany(Photo::class, 'imageable');
     }
 }

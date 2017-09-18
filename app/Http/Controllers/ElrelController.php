@@ -32,6 +32,13 @@ class ElrelController extends Controller
         return view('elrel.user_roles', compact('user'));
     }
 
+    public function userphotos($user_id)
+    {
+        $user = User::find($user_id);
+
+        return view('elrel.user_photos', compact('user'));
+    }
+
     public function postdetail($post_id)
     {
         $post = Post::find($post_id);

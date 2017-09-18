@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Photo;
 use App\Post;
 use App\Role;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -45,5 +46,11 @@ class User extends Authenticatable
     public function roles()
     {
         return $this->belongsToMany(Role::class);
+    }
+
+    // Polimorphic relationship
+    public function photos()
+    {
+        return $this->morphMany(Photo::class, 'imageable');
     }
 }

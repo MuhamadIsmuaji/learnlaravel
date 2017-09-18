@@ -6,6 +6,7 @@
 			<li>
 				{{ $user->name }} | {{ $user->email }}
 				<a href="{{ route('elrel.userposts', ['user_id' => $user->id]) }}">User Posts</a> ||
+				<a href="{{ route('elrel.userphotos', ['user_id' => $user->id]) }}">User Photos</a> ||
 				<a href="{{ route('elrel.userroles', ['user_id' => $user->id]) }}">User Roles</a>
 			</li>
 		@endforeach
