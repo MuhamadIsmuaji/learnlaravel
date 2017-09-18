@@ -34,4 +34,6 @@ Route::get('elupdatemass/{id}', 'ElController@updatemass')->name('el.updatemass'
 // Eloquent relationship routes
 Route::get('elrel', 'ElrelController@index')->name('elrel.index');
 Route::get('elrel/user/{user_id}/posts', 'ElrelController@userposts')->name('elrel.userposts');
+Route::get('elrel/user/{user_id}/roles', 'ElrelController@userroles')->name('elrel.userroles');
 Route::get('elrel/post/{post_id}/detail', 'ElrelController@postdetail')->name('elrel.postdetail');
+Route::get('elrel/role/{role_id}/detail', 'ElrelController@roledetail')->name('elrel.roledetail');

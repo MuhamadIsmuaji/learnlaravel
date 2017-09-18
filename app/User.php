@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Post;
+use App\Role;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -38,5 +39,11 @@ class User extends Authenticatable
     public function posts()
     {
         return $this->hasMany(Post::class);
+    }
+
+    // Many to many relationship
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
     }
 }
