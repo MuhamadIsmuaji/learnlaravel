@@ -15,7 +15,10 @@ class ElrelController extends Controller
     public function index()
     {
         $users = User::all();
-        $posts = Post::all();
+        // lazy loading
+        // $posts = Post::all();
+        // eager loading
+        $posts = Post::with('user')->get();
         $roles = Role::all();
         $countries = Country::all();
         $photos = Photo::all();

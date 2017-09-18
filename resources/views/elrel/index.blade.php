@@ -19,7 +19,7 @@
 	<ul>
 		@foreach($posts as $post)
 			<li>
-				{{ $post->title }}
+				{{ $post->title }} | Posted By: {{ $post->user->name }}
 				<a href="{{ route('elrel.postdetail', ['post_id' => $post->id]) }}">Detail</a>
 			</li>
 		@endforeach
