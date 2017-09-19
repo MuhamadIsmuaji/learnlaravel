@@ -13,6 +13,7 @@ class HomeController extends Controller
 
         foreach ($users as $user) {
             echo $user->name . ' | ' . $user->email . '<a href="' . route('userdetail', ['user_id' => $user->id]) . '">Detail<a>';
+            echo ' | <a href="' . route('deleteuser', ['user_id' => $user->id]) . '">Delete</a>';
             echo '<br>';
         }
 
@@ -31,10 +32,18 @@ class HomeController extends Controller
         return redirect()->route('home');
     }
 
+    public function deleteuser($user_id)
+    {
+        $user = User::find($user_id);
+        $user->address()->delete();
+        $user->delete();
+
+        return redirect()->route('home');
+    }
+
     public function userdetail($user_id)
     {
         $user = User::find($user_id);
-        // dd($user);
         echo $user->name;
         echo '<hr>';
 

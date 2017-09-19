@@ -13,6 +13,7 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('createuser', 'HomeController@createuser')->name('createuser');
+Route::get('deleteuser/{user_id}', 'HomeController@deleteuser')->name('deleteuser');
 Route::get('userdetail/{user_id}', 'HomeController@userdetail')->name('userdetail');
 Route::get('createaddress/{user_id}', 'HomeController@createaddress')->name('createaddress');
 Route::get('deleteaddress/{user_id}', 'HomeController@deleteaddress')->name('deleteaddress');
